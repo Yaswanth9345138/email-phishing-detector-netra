@@ -8,7 +8,7 @@ import requests
 
 class APIClient:
     def __init__(self, base_url: str | None = None):
-        self.base_url = (base_url or os.getenv("NETRA_API_URL", "http://127.0.0.1:8000")).rstrip("/")
+        self.base_url = (base_url or os.getenv("NETRA_API_URL", "http://127.0.0.1:8001")).rstrip("/")
 
     def request(self, method: str, path: str, **kwargs) -> Any:
         response = requests.request(method, f"{self.base_url}{path}", timeout=15, **kwargs)
